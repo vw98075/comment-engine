@@ -1,0 +1,32 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "questionTarget",
+            "otherEntityName": "commentTarget",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "product"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "reviewTarget",
+            "otherEntityName": "commentTarget",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "product"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20170625180610",
+    "entityTableName": "product",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}

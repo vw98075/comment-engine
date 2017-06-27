@@ -1,0 +1,14 @@
+version: '2'
+services:
+    comment_engine-app:
+        image: comment_engine
+        environment:
+            - SPRING_PROFILES_ACTIVE=prod,swagger
+            - SPRING_DATASOURCE_URL=jdbc:postgresql://comment_engine-postgresql:5432/comment_engine
+            - JHIPSTER_SLEEP=10 # gives time for the database to boot before the application
+        ports:
+            - 8080:8080
+    comment_engine-postgresql:
+        extends:
+            file: postgresql.yml
+            service: comment_engine-postgresql

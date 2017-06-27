@@ -1,0 +1,24 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "feedback",
+            "otherEntityName": "commentTarget",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "review"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "text",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20170625180611",
+    "entityTableName": "review",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}

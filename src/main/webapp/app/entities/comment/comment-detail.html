@@ -1,0 +1,35 @@
+
+<div>
+    <h2><span>Comment</span> {{vm.comment.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span>Text</span></dt>
+        <dd>
+            <span>{{vm.comment.text}}</span>
+        </dd>
+        <dt><span>Submitted Date</span></dt>
+        <dd>
+            <span>{{vm.comment.submittedDate | date:'medium'}}</span>
+        </dd>
+        <dt><span>Target</span></dt>
+        <dd>
+            <a ui-sref="comment-target-detail({id:vm.comment.target.id})">{{vm.comment.target.id}}</a>
+        </dd>
+        <dt><span>Comment Target</span></dt>
+        <dd>
+            <a ui-sref="comment-target-detail({id:vm.comment.commentTarget.id})">{{vm.comment.commentTarget.id}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span> Back</span>
+    </button>
+
+    <button type="button" ui-sref="comment-detail.edit({id:vm.comment.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down"> Edit</span>
+    </button>
+</div>

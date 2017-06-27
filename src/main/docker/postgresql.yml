@@ -1,0 +1,11 @@
+version: '2'
+services:
+    comment_engine-postgresql:
+        image: postgres:9.6.2
+        # volumes:
+        #     - ~/volumes/jhipster/comment_engine/postgresql/:/var/lib/postgresql/data/
+        environment:
+            - POSTGRES_USER=comment_engine
+            - POSTGRES_PASSWORD=
+        ports:
+            - 5432:5432

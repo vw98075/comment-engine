@@ -1,0 +1,22 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "comments",
+            "otherEntityName": "comment",
+            "otherEntityRelationshipName": "commentTarget"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "targetEntityName",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20170625180613",
+    "entityTableName": "comment_target",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}
