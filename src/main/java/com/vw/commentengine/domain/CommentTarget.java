@@ -1,12 +1,11 @@
 package com.vw.commentengine.domain;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
+
 import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
-import java.util.Objects;
 
 /**
  * A CommentTarget.
@@ -26,9 +25,9 @@ public class CommentTarget implements Serializable {
     private String targetEntityName;
 
     @OneToMany(mappedBy = "commentTarget")
-    @JsonIgnore
     private Set<Comment> comments = new HashSet<>();
 
+    // jhipster-needle-entity-add-field - JHipster will add fields here
     public Long getId() {
         return id;
     }
@@ -74,27 +73,25 @@ public class CommentTarget implements Serializable {
     public void setComments(Set<Comment> comments) {
         this.comments = comments;
     }
+    // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here
 
     @Override
     public boolean equals(Object o) {
         if (this == o) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (!(o instanceof CommentTarget)) {
             return false;
         }
-        CommentTarget commentTarget = (CommentTarget) o;
-        if (commentTarget.getId() == null || getId() == null) {
-            return false;
-        }
-        return Objects.equals(getId(), commentTarget.getId());
+        return id != null && id.equals(((CommentTarget) o).id);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hashCode(getId());
+        return 31;
     }
 
+    // prettier-ignore
     @Override
     public String toString() {
         return "CommentTarget{" +

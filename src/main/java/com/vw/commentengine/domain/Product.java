@@ -2,8 +2,8 @@ package com.vw.commentengine.domain;
 
 
 import javax.persistence.*;
+
 import java.io.Serializable;
-import java.util.Objects;
 
 /**
  * A Product.
@@ -30,6 +30,7 @@ public class Product implements Serializable {
     @JoinColumn(unique = true)
     private CommentTarget reviewTarget;
 
+    // jhipster-needle-entity-add-field - JHipster will add fields here
     public Long getId() {
         return id;
     }
@@ -76,27 +77,25 @@ public class Product implements Serializable {
     public void setReviewTarget(CommentTarget commentTarget) {
         this.reviewTarget = commentTarget;
     }
+    // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here
 
     @Override
     public boolean equals(Object o) {
         if (this == o) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (!(o instanceof Product)) {
             return false;
         }
-        Product product = (Product) o;
-        if (product.getId() == null || getId() == null) {
-            return false;
-        }
-        return Objects.equals(getId(), product.getId());
+        return id != null && id.equals(((Product) o).id);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hashCode(getId());
+        return 31;
     }
 
+    // prettier-ignore
     @Override
     public String toString() {
         return "Product{" +

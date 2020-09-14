@@ -1,16 +1,14 @@
 package com.vw.commentengine.repository;
 
 import com.vw.commentengine.domain.CommentTarget;
-import org.springframework.stereotype.Repository;
 
 import org.springframework.data.jpa.repository.*;
-
+import org.springframework.stereotype.Repository;
 
 /**
- * Spring Data JPA repository for the CommentTarget entity.
+ * Spring Data  repository for the CommentTarget entity.
  */
 @SuppressWarnings("unused")
 @Repository
-public interface CommentTargetRepository extends JpaRepository<CommentTarget,Long> {
-    
+public interface CommentTargetRepository extends JpaRepository<CommentTarget, Long> {
 }

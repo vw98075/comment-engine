@@ -3,13 +3,12 @@
     "promptValues": {
       "packageName": "com.vw.commentengine"
     },
-    "jhipsterVersion": "4.5.6",
+    "jhipsterVersion": "6.10.1",
     "baseName": "comment_engine",
     "packageName": "com.vw.commentengine",
     "packageFolder": "com/vw/commentengine",
     "serverPort": "8080",
     "authenticationType": "jwt",
-    "hibernateCache": "no",
     "clusteredHttpSession": false,
     "websocket": false,
     "databaseType": "sql",
@@ -28,6 +27,13 @@
     "testFrameworks": [],
     "jhiPrefix": "jhi",
     "otherModules": [],
-    "enableTranslation": false
+    "enableTranslation": false,
+    "cacheProvider": "no",
+    "embeddableLaunchScript": false,
+    "clientTheme": "none",
+    "creationTimestamp": 1600043980611,
+    "entitySuffix": "",
+    "dtoSuffix": "DTO",
+    "blueprints": []
   }
 }

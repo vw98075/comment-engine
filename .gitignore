@@ -2,9 +2,8 @@
 # Project Specific
 ######################
 /src/main/webapp/content/css/main.css
-/build/www/**
+/build/resources/main/static/**
 /src/test/javascript/coverage/
-/src/test/javascript/PhantomJS*/
 
 ######################
 # Node
@@ -13,6 +12,8 @@
 node_tmp/
 node_modules/
 npm-debug.log.*
+/.awcache/*
+/.cache-loader/*
 
 ######################
 # SASS
@@ -50,8 +51,11 @@ local.properties
 # PDT-specific
 .buildpath
 
+# STS-specific
+/.sts4-cache/*
+
 ######################
-# Intellij
+# IntelliJ
 ######################
 .idea/
 *.iml
@@ -60,6 +64,7 @@ local.properties
 *.ids
 *.orig
 classes/
+out/
 
 ######################
 # Visual Studio Code
@@ -117,7 +122,7 @@ Desktop.ini
 ######################
 # Logs
 ######################
-*.log
+*.log*
 
 ######################
 # Others

@@ -1,11 +1,12 @@
 package com.vw.commentengine.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
 import javax.validation.constraints.*;
+
 import java.io.Serializable;
 import java.time.ZonedDateTime;
-import java.util.Objects;
 
 /**
  * A Comment.
@@ -33,8 +34,10 @@ public class Comment implements Serializable {
     private CommentTarget target;
 
     @ManyToOne
+    @JsonIgnoreProperties(value = "comments", allowSetters = true)
     private CommentTarget commentTarget;
 
+    // jhipster-needle-entity-add-field - JHipster will add fields here
     public Long getId() {
         return id;
     }
@@ -94,27 +97,25 @@ public class Comment implements Serializable {
     public void setCommentTarget(CommentTarget commentTarget) {
         this.commentTarget = commentTarget;
     }
+    // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here
 
     @Override
     public boolean equals(Object o) {
         if (this == o) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (!(o instanceof Comment)) {
             return false;
         }
-        Comment comment = (Comment) o;
-        if (comment.getId() == null || getId() == null) {
-            return false;
-        }
-        return Objects.equals(getId(), comment.getId());
+        return id != null && id.equals(((Comment) o).id);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hashCode(getId());
+        return 31;
     }
 
+    // prettier-ignore
     @Override
     public String toString() {
         return "Comment{" +
